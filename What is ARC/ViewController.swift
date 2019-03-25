@@ -25,20 +25,21 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createObjects()
+        print("ARC count \(CFGetRetainCount(self))")
         assignProperties()
     }
     func createObjects() {
         alon = Person(name: "Alon Harari", car: nil) // var alon has a strong refrence to object Person
         mazda = Car(name: "Mazda 3", owner: nil) // var mazda has a strong refrence to object Car
         
-        //alon = nil
-        //mazda = nil
+        //alon = nil  // Retain Count would decrease by 1
+        //mazda = nil  // Retain Count would decrease by 1
     }
     func assignProperties() {
         alon?.car = mazda
         mazda?.owner = alon
         
-        alon = nil
+        alon = nil // Retain Count would decrease by 1
 
     }
     
@@ -51,6 +52,8 @@ class Person {
     init(name: String, car: Car?){
         self.name = name
         self.car = car
+        print("\(self.name) is being initialized")
+
     }
     deinit {
         print("\(name) is being deinitialized")
@@ -65,6 +68,8 @@ class Car {
     init(name:String, owner: Person?){
         self.name = name
         self.owner = owner
+        print("\(self.name) is being initialized")
+
     }
     deinit {
         print("Car of owner:\(name) is being deinitialized")

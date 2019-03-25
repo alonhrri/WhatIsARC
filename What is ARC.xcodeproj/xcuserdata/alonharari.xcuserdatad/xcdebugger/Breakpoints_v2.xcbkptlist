@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "What is ARC/ViewController.swift"
-            timestampString = "575161944.667909"
+            timestampString = "575163736.047469"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "assignProperties()"
             landmarkType = "7">
          </BreakpointContent>
